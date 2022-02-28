@@ -19,7 +19,7 @@ connection.On<UserDTO>("ReceivedMessage", (user) => {
     Console.WriteLine(JsonConvert.SerializeObject(user));
 });
 
-connection.StartAsync();
+await connection.StartAsync();
 
 class UserDTO
 {
