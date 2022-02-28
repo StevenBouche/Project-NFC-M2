@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import NfcManager, { NfcTech, Ndef } from 'react-native-nfc-manager';
+import init from 'react_native_mqtt';
+import { AsyncStorage } from '@react-native-community/async-storage';
 
 export const Read = () => {
 
