@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {}
+    "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {}
   },
   "projects": {
-    "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {
+    "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
         "projectName": "NFConsoleApp",
-        "projectPath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\arman\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\obj\\",
+        "projectPath": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\camza\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\camza\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

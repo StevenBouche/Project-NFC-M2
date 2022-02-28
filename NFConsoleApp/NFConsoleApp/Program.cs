@@ -21,6 +21,8 @@ connection.On<UserDTO>("ReceivedMessage", (user) => {
 
 await connection.StartAsync();
 
+Console.ReadLine();
+
 class UserDTO
 {
     public string UserId { get; set; } = "";
