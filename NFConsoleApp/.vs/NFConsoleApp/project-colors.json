@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "49d3ed4f-9678-4363-9806-c498c86d723e": {
+      "ProjectGuid": "49d3ed4f-9678-4363-9806-c498c86d723e",
+      "DisplayName": "NFConsoleApp",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
