@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wtF5K7GE0blmkVuYTxCIA7Ct5sF2Xt3kSS1lH/HUE+kx9rSI1EBTxDYAU8vyXHCmdweWWMB6oWtM+AlK+6TavA==",
+  "dgSpecHash": "w6GGnr6L8i3edy3UrSoueo0CJERWjYrVVwXidKDTSNOXAP1hyiTUEKJp189/X9lRBzVQfNJSI8tGIQ0/w+K+FA==",
   "success": true,
-  "projectFilePath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
+  "projectFilePath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arman\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\6.0.2\\microsoft.aspnetcore.connections.abstractions.6.0.2.nupkg.sha512",
     "C:\\Users\\arman\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\6.0.2\\microsoft.aspnetcore.http.connections.client.6.0.2.nupkg.sha512",

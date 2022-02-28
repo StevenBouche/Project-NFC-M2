@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents2\\MIAGE\\Master_2\\NFC\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {}
+    "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {}
   },
   "projects": {
-    "D:\\Documents2\\MIAGE\\Master_2\\NFC\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {
+    "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
+        "projectUniqueName": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
         "projectName": "NFConsoleApp",
-        "projectPath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
+        "projectPath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
         "packagesPath": "C:\\Users\\arman\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\NFConsoleApp\\NFConsoleApp\\obj\\",
+        "outputPath": "D:\\Documents2\\MIAGE\\Master_2\\NFC\\Projet_NFC\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arman\\AppData\\Roaming\\NuGet\\NuGet.Config",

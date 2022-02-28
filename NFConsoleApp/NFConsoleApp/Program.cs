@@ -6,10 +6,11 @@ Console.WriteLine("Hello, World!");
 
 string Id = "cringe";
 HubConnection connection = new HubConnectionBuilder()
-                .WithUrl($"http://localhost:8080/userhub/{Id}")
+                .WithUrl($"http://localhost:8080/userhub?idUser={Id}")
                 .Build();
 
 connection.Closed += async (error) => {
+    Console.WriteLine("errooooooooooor");
     await Task.Delay(new Random().Next(0, 5) * 1000);
     await connection.StartAsync();
 };
@@ -17,6 +18,8 @@ connection.Closed += async (error) => {
 connection.On<UserDTO>("ReceivedMessage", (user) => {
     Console.WriteLine(JsonConvert.SerializeObject(user));
 });
+
+connection.StartAsync();
 
 class UserDTO
 {
