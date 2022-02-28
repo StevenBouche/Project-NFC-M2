@@ -14,7 +14,7 @@ export const HomeScreen = ({ navigation }) => {
 				<Button
 					title="Write TAG"
 					onPress={() =>
-						navigation.navigate('ReadTag')
+						navigation.navigate('WriteTag')
 					}
 				/>
 			</View>

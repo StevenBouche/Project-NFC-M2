@@ -4,9 +4,46 @@ import NfcManager, { NfcTech, Ndef } from 'react-native-nfc-manager';
 import init from 'react_native_mqtt';
 import { AsyncStorage } from '@react-native-community/async-storage';
 
+
+
+init({
+	size: 10000,
+	storageBackend: AsyncStorage,
+	defaultExpires: 1000 * 3600 * 24,
+	enableCache: true,
+	reconnect: true,
+	sync: {
+	}
+});
+
 export const Read = () => {
 
 	const [text, setText] = useState('');
+
+	const onConnect = () => {
+		console.warn("connected to mqtt broker"); 
+	}
+
+	const onFailure = () => {
+		console.warn("can't connect to mqtt broker");
+	}
+
+	const onConnectionLost = (responseObject) => {
+		if (responseObject.errorCode !== 0) {
+			console.log("onConnectionLost:" + responseObject.errorMessage);
+		}
+	}
+
+	const onMessageArrived = (message) => {
+		console.log("onMessageArrived:" + message.payloadString);
+	}
+
+	const client = new Paho.MQTT.Client('broker.mqttdashboard.com', 8000, 'leoGuillaumet');
+
+	client.onConnectionLost = onConnectionLost;
+	client.onMessageArrived = onMessageArrived;
+	client.connect({ onSuccess: onConnect, onFailure: onFailure, useSSL: false });
+
 	async function readNdef() {
 		try {
 			// register for the NFC tag with NDEF in it
@@ -17,6 +54,7 @@ export const Read = () => {
 			console.warn('tag', tag.ndefMessage[0].payload);
 
 			setText(Ndef.text.decodePayload(tag.ndefMessage[0].payload));
+			client.send('leoGuillaumet', text);
 		} catch (ex) {
 			console.warn('Oops!', ex);
 		} finally {
@@ -24,6 +62,7 @@ export const Read = () => {
 			NfcManager.cancelTechnologyRequest();
 		}
 	}
+
 
 	return (
 		<View style={styles.container}>

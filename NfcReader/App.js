@@ -5,6 +5,8 @@ import { StyleSheet, View } from 'react-native';
 
 import { HomeScreen } from './pages/HomeScreen';
 import { ReadTagPage } from './pages/Read';
+import { WriteTagPage } from './pages/Write';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +17,7 @@ const App = () => {
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="ReadTag" component={ReadTagPage} />
+          <Stack.Screen name="WriteTag" component={WriteTagPage} />
         </Stack.Navigator>
     </NavigationContainer>
   );
