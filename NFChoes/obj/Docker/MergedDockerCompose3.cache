@@ -1,0 +1,18 @@
+services:
+  nfchoes:
+    build:
+      context: C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Project-NFC-M2\NFChoes
+      dockerfile: NFChoes/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: nfchoes
+    ports:
+    - target: 80
+    - target: 443
+    - published: 9000
+      target: 9000
+    volumes:
+    - C:\Users\camza\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\camza\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

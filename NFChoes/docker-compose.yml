@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  nfchoes:
+    image: ${DOCKER_REGISTRY-}nfchoes
+    build:
+      context: .
+      dockerfile: NFChoes/Dockerfile
