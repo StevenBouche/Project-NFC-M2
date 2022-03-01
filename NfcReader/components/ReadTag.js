@@ -10,6 +10,8 @@ const topic = 'userevent';
 export const Read = () => {
 
 	const [text, setText] = useState('');
+	const [log, setLog] = useState('');
+
 	const [client, setClient] = useState(null);
 	const [mqttAdress, setMqttAdress] = useState('');
 	const [isConnected, setIsConnected] = useState(false);
@@ -23,16 +25,21 @@ export const Read = () => {
 		if (client) {
 			client.on(Mqtt.Event.Message, (topic, message) => {
 				console.log('Mqtt Message:', topic, message.toString());
+				setLog(`Mqtt Message: ${topic, message.toString()}`);
+
 			});
 
 			client.on(Mqtt.Event.Connect, () => {
 				console.warn('MQTT Connect');
+				setLog('MQTT Connect');
+
 				client.subscribe([topic], [0]);
 				setIsConnected(true);
 			});
 
 			client.on(Mqtt.Event.Error, (error) => {
 				console.warn('MQTT Error:', error);
+				setLog(error);
 			});
 
 			client.on(Mqtt.Event.Disconnect, (cause) => {
@@ -42,7 +49,7 @@ export const Read = () => {
 			client.connect({
 				clientId: 'user',
 				cleanSession: true,
-			}, err => { if (err) console.warn(err); });
+			}, err => { setLog(err); });
 		}
 	}, [client]);
 
@@ -103,6 +110,8 @@ export const Read = () => {
 				/>
 			</View>
 			{!!text && (<Text>{`identifiant: ${text}`}</Text>)}
+			{!!log && (<Text>{`log: ${log}`}</Text>)}
+
 		</View>
 	);
 }
