@@ -5,7 +5,7 @@ import NfcManager, { NfcTech, Ndef } from 'react-native-nfc-manager';
 
 export const Write = () => {
 
-	const [text, setText] = useState(null);
+	const [text, setText] = useState('cringe');
 
 	useEffect(() => {
 		getData;

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, TextInput, Button } from 'react-native';
 import NfcManager, { NfcTech, Ndef } from 'react-native-nfc-manager';
 import * as Mqtt from 'react-native-native-mqtt';
 import { Buffer } from "buffer"
@@ -10,31 +10,42 @@ const topic = 'userevent';
 export const Read = () => {
 
 	const [text, setText] = useState('');
+	const [client, setClient] = useState(null);
+	const [mqttAdress, setMqttAdress] = useState('');
+	const [isConnected, setIsConnected] = useState(false);
 	const [storeId, setStoreId] = useState("Fnac");
 
-	const client = new Mqtt.Client('tcp://172.20.10.2:9000');
+	const handleConnect = () => {
+		setClient(new Mqtt.Client(`tcp://${mqttAdress}:9000`));
+	}
 
-	client.on(Mqtt.Event.Message, (topic, message) => {
-		console.log('Mqtt Message:', topic, message.toString());
-	});
+	useEffect(() => {
+		if (client) {
+			client.on(Mqtt.Event.Message, (topic, message) => {
+				console.log('Mqtt Message:', topic, message.toString());
+			});
 
-	client.on(Mqtt.Event.Connect, () => {
-		console.warn('MQTT Connect');
-		client.subscribe([topic], [0]);
-	});
+			client.on(Mqtt.Event.Connect, () => {
+				console.warn('MQTT Connect');
+				client.subscribe([topic], [0]);
+				setIsConnected(true);
+			});
 
-	client.on(Mqtt.Event.Error, (error) => {
-		console.warn('MQTT Error:', error);
-	});
+			client.on(Mqtt.Event.Error, (error) => {
+				console.warn('MQTT Error:', error);
+			});
 
-	client.on(Mqtt.Event.Disconnect, (cause) => {
-		console.log('MQTT Disconnect:', cause);
-	});
+			client.on(Mqtt.Event.Disconnect, (cause) => {
+				console.log('MQTT Disconnect:', cause);
+			});
 
-	client.connect({
-		clientId: 'user',
-		cleanSession: true,
-	}, err => { if (err) console.warn(err); });
+			client.connect({
+				clientId: 'user',
+				cleanSession: true,
+			}, err => { if (err) console.warn(err); });
+		}
+	}, [client]);
+
 
 	async function readNdef() {
 		try {
@@ -49,10 +60,9 @@ export const Read = () => {
 			const msg = Buffer.from(`{"UserId":"${Ndef.text.decodePayload(tag.ndefMessage[0].payload)}",
 			"StoreId":"${storeId}"}`
 				, "utf-8");
-			// convert buffer to string
 			const resultStr = msg.toString();
 
-			console.warn("BufferString:", resultStr); //Hey. this is a string!
+			console.warn("BufferString:", resultStr);
 
 			client.publish(topic, msg, 0);
 		} catch (ex) {
@@ -66,6 +76,12 @@ export const Read = () => {
 
 	return (
 		<View style={styles.container}>
+			<TextInput
+				style={styles.input}
+				onChangeText={setMqttAdress}
+				value={mqttAdress}
+				placeholder="Enter your mqtt adress"
+			/>
 			<Picker
 				selectedValue={storeId}
 				style={{ height: 50, width: 150 }}
@@ -77,20 +93,42 @@ export const Read = () => {
 				<Picker.Item label="Darty" value="Darty" />
 
 			</Picker>
-			<TouchableOpacity onPress={readNdef}>
-				<Text>Scan a Tag</Text>
-				{!!text && (<Text>{`identifiant: ${text}`}</Text>)}
-			</TouchableOpacity>
+			<View style={styles.buttonContainer}>
+				<Button
+					disabled={!mqttAdress}
+					title="Connect tp mqtt"
+					onPress={handleConnect}
+				/>
+				<Button
+					disabled={!isConnected}
+					title="Scan Tag"
+					onPress={readNdef}
+				/>
+			</View>
+			{!!text && (<Text>{`identifiant: ${text}`}</Text>)}
 		</View>
 	);
 }
 
 const styles = StyleSheet.create({
+	input: {
+		height: 40,
+		margin: 12,
+		borderWidth: 1,
+		padding: 10,
+		width: '70%',
+	},
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+	buttonContainer: {
+		flexDirection: 'column',
+		justifyContent: 'space-around',
+		alignContent: 'center',
+		height: '15%',
 	},
 });
 
