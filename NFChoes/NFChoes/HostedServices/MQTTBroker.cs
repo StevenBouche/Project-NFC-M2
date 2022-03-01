@@ -13,6 +13,7 @@ namespace NFChoes.HostedServices
         private readonly ILogger _logger;
         private readonly IMqttServer _mqttServer;
         private readonly NfcProxyHub _proxy;
+        private readonly NfcStoreProxyHub _storeProxy;
         //Actions
         private readonly Dictionary<string, Action<MqttApplicationMessageReceivedEventArgs>> _topicActions;
 
@@ -21,12 +22,13 @@ namespace NFChoes.HostedServices
         private readonly object _lockObj = new();
 
 
-        public MQTTBroker(IMemoryCache memoryCache, ILogger<MQTTBroker> logger, NfcProxyHub proxy)
+        public MQTTBroker(IMemoryCache memoryCache, ILogger<MQTTBroker> logger, NfcProxyHub proxy, NfcStoreProxyHub storeProxy)
         {
             _mqttServer = new MqttFactory().CreateMqttServer();
             _logger = logger;
             _topicActions = new Dictionary<string, Action<MqttApplicationMessageReceivedEventArgs>>();
-            _proxy = proxy; 
+            _proxy = proxy;
+            _storeProxy = storeProxy;
             _memoryCache = memoryCache;
         }
 
@@ -74,6 +76,12 @@ namespace NFChoes.HostedServices
 
                 if(history != null) 
                     await _proxy.OnReceivedMessage(history);
+
+                if (!_memoryCache.TryGetValue(data.StoreId, out List<NFCHistory> storeList))
+                {
+                    List<NFCHistory> insideStoreusers = storeList.Where(user => user.OutTimestamp == null).ToList();
+                    await _storeProxy.OnReceivedMessage(insideStoreusers, history.StoreId);
+                }
             }
             catch (Exception e)
             {
