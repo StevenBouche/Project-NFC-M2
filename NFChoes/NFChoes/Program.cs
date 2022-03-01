@@ -1,7 +1,17 @@
+using MQTTnet.AspNetCore;
+using MQTTnet.AspNetCore.Extensions;
 using NFChoes.HostedServices;
 using NFChoes.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(
+                    o =>
+                    {
+                        o.ListenAnyIP(9000, l => l.UseMqtt()); // MQTT pipeline
+                        o.ListenAnyIP(5000);
+                        o.ListenAnyIP(8080);
+                    });
 
 builder.Services.AddControllers();
 
@@ -12,8 +22,17 @@ builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true
 
 builder.Services.AddSignalR();
 builder.Services.AddTransient<NfcProxyHub>();
-builder.Services.AddHostedService<MQTTBroker>();
+//builder.Services.AddHostedService<MQTTBroker>();
 builder.Services.AddMemoryCache();
+
+builder.Services.AddSingleton<MQTTBroker>();
+builder.Services.AddHostedMqttServerWithServices(options => {
+    var s = options.ServiceProvider.GetRequiredService<MQTTBroker>();
+    s.ConfigureMqttServerOptions(options);
+});
+builder.Services.AddMqttConnectionHandler();
+builder.Services.AddMqttWebSocketServerAdapter();
+
 
 var app = builder.Build();
 
@@ -29,6 +48,13 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
     endpoints.MapHub<NfcHub>("/userhub");
+    endpoints.MapConnectionHandler<MqttConnectionHandler>(
+                "/mqtt",
+                httpConnectionDispatcherOptions => httpConnectionDispatcherOptions.WebSockets.SubProtocolSelector =
+                                                       protocolList =>
+                                                           protocolList.FirstOrDefault() ?? string.Empty);
 });
+
+app.UseMqttServer(server => app.Services.GetRequiredService<MQTTBroker>().ConfigureMqttServer(server));
 
 app.Run();

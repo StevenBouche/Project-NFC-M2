@@ -17,8 +17,8 @@ connection.Closed += async (error) => {
 
 connection.On<UserDTO>("ReceivedMessage", (user) => {
     var message = user.OutTimestamp == null ?
-        $"I just walked into the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeSeconds(user.InTimestamp)}" :
-        $"I just left the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeSeconds((long)user.OutTimestamp)}";
+        $"I just walked into the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeMilliseconds(user.InTimestamp)}" :
+        $"I just left the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeMilliseconds((long)user.OutTimestamp)}";
     Console.WriteLine(JsonConvert.SerializeObject(user));
     Console.WriteLine(message);
 });
@@ -30,16 +30,25 @@ Console.WriteLine("Enter help too give all commands.");
 while (true)
 {
     var line = ReadLine();
-   /* Action? action = line switch
+    Action? action = line switch
     {
-        "menu" => () => {
+        "help" => () => {
             Console.WriteLine("- history : Write history to get all your movements");
             Console.WriteLine("- exit : Stop command line");
         },
-        "exit" => () => { break; },
-        _ => null
+        "history" => async () =>
+        {
+            var list = await connection.InvokeAsync<List<UserDTO>>("MyHistory");
+            list.ForEach(x => Console.WriteLine(JsonConvert.SerializeObject(x)));
+        } ,
+        "exit" => null,
+        _ => () => { }
     };
-    action?.Invoke();*/
+
+    if (action == null)
+        break;
+
+    action?.Invoke();
 }
 
 

@@ -185,6 +185,18 @@
           "lib/net5.0/MQTTnet.dll": {}
         }
       },
+      "MQTTnet.AspNetCore/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "MQTTnet": "3.1.2"
+        },
+        "compile": {
+          "lib/net5.0/MQTTnet.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/MQTTnet.AspNetCore.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -710,6 +722,25 @@
         "lib/uap10.0/MQTTnet.pri",
         "mqttnet.3.1.2.nupkg.sha512",
         "mqttnet.nuspec"
+      ]
+    },
+    "MQTTnet.AspNetCore/3.1.2": {
+      "sha512": "ZNRmoKqxyE7MbkNtSo8TRzi59K9JUv/7li7CzSlShiUxDdus823o3nhz0RnBl3kD2tlVn57Qlo4Ao4cWSyoAQg==",
+      "type": "package",
+      "path": "mqttnet.aspnetcore/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "images/Logo_128x128.png",
+        "lib/net5.0/MQTTnet.AspNetCore.deps.json",
+        "lib/net5.0/MQTTnet.AspNetCore.dll",
+        "lib/netcoreapp3.1/MQTTnet.AspNetCore.deps.json",
+        "lib/netcoreapp3.1/MQTTnet.AspNetCore.dll",
+        "lib/netstandard2.0/MQTTnet.AspNetCore.deps.json",
+        "lib/netstandard2.0/MQTTnet.AspNetCore.dll",
+        "mqttnet.aspnetcore.3.1.2.nupkg.sha512",
+        "mqttnet.aspnetcore.nuspec"
       ]
     },
     "Newtonsoft.Json/13.0.1": {
@@ -1555,6 +1586,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "MQTTnet >= 3.1.2",
+      "MQTTnet.AspNetCore >= 3.1.2",
       "Microsoft.AspNetCore.SignalR.Core >= 1.1.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.14.0",
       "Newtonsoft.Json >= 13.0.1",
@@ -1608,6 +1640,10 @@
         "targetAlias": "net6.0",
         "dependencies": {
           "MQTTnet": {
+            "target": "Package",
+            "version": "[3.1.2, )"
+          },
+          "MQTTnet.AspNetCore": {
             "target": "Package",
             "version": "[3.1.2, )"
           },

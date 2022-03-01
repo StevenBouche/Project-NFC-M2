@@ -30,3 +30,4 @@ H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\bin\Debug\NFChoes.pdb
 H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\obj\Debug\docker-compose.dcproj.CopyComplete
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\bin\Debug\MQTTnet.AspNetCore.dll

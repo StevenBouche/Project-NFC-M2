@@ -56,3 +56,4 @@ H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NF
 H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\ref\NFChoes.dll
 H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.pdb
 H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.genruntimeconfig.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\MQTTnet.AspNetCore.dll

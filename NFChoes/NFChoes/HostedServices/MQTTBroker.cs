@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using MQTTnet;
+using MQTTnet.AspNetCore;
 using MQTTnet.Client.Receiving;
 using MQTTnet.Server;
 using Newtonsoft.Json;
@@ -8,10 +9,10 @@ using NFChoes.Hubs;
 
 namespace NFChoes.HostedServices
 {
-    public class MQTTBroker : BackgroundService
+    public class MQTTBroker/* : BackgroundService*/
     {
         private readonly ILogger _logger;
-        private readonly IMqttServer _mqttServer;
+        private IMqttServer _mqttServer;
         private readonly NfcProxyHub _proxy;
         //Actions
         private readonly Dictionary<string, Action<MqttApplicationMessageReceivedEventArgs>> _topicActions;
@@ -23,11 +24,26 @@ namespace NFChoes.HostedServices
 
         public MQTTBroker(IMemoryCache memoryCache, ILogger<MQTTBroker> logger, NfcProxyHub proxy)
         {
-            _mqttServer = new MqttFactory().CreateMqttServer();
+            //_mqttServer = new MqttFactory().CreateMqttServer();
             _logger = logger;
             _topicActions = new Dictionary<string, Action<MqttApplicationMessageReceivedEventArgs>>();
             _proxy = proxy; 
             _memoryCache = memoryCache;
+        }
+
+        public void ConfigureMqttServerOptions(AspNetMqttServerOptionsBuilder options)
+        {
+            //options.WithConnectionValidator(this);
+            //options.WithApplicationMessageInterceptor(this);
+            options.WithConnectionBacklog(100)
+               .WithDefaultEndpointPort(9000);
+        }
+
+        public void ConfigureMqttServer(IMqttServer mqtt)
+        {
+            this._mqttServer = mqtt;
+            _mqttServer.ApplicationMessageReceivedHandler = new MqttApplicationMessageReceivedHandlerDelegate(e => OnReceiveMessage(e));
+            _topicActions.Add("userevent", HandlerUserEvent);
         }
 
         private void InitHandler()
@@ -54,7 +70,13 @@ namespace NFChoes.HostedServices
                         _memoryCache.Set(data.StoreId, lists);
                     }
 
-                   history = lists.SingleOrDefault(user => user.UserId.Equals(data.UserId) && user.OutTimestamp == null);
+                    if (!_memoryCache.TryGetValue(data.UserId, out List<NFCHistory> userlists))
+                    {
+                        userlists = new List<NFCHistory>();
+                        _memoryCache.Set(data.UserId, userlists);
+                    }
+
+                    history = lists.SingleOrDefault(user => user.UserId.Equals(data.UserId) && user.OutTimestamp == null);
 
                     if(history == null)
                     {
@@ -65,6 +87,7 @@ namespace NFChoes.HostedServices
                             InTimestamp = data.Timestamp
                         };
                         lists.Add(history);
+                        userlists.Add(history);
                     }
                     else
                     {
@@ -92,7 +115,7 @@ namespace NFChoes.HostedServices
             _topicActions[topic]?.Invoke(e);
         }
 
-        protected override Task ExecuteAsync(CancellationToken stoppingToken)
+     /*   protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             if (_mqttServer.IsStarted)
                 return Task.CompletedTask;
@@ -106,6 +129,6 @@ namespace NFChoes.HostedServices
             _logger.LogInformation("MQTT broker startup.");
 
             return _mqttServer.StartAsync(options.Build());
-        }
+        }*/
     }
 }
