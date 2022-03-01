@@ -1,48 +1,37 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import NfcManager, { NfcTech, Ndef } from 'react-native-nfc-manager';
-import init from 'react_native_mqtt';
-import { AsyncStorage } from '@react-native-community/async-storage';
+import * as Mqtt from 'react-native-native-mqtt';
+import { Buffer } from "buffer"
 
-
-
-init({
-	size: 10000,
-	storageBackend: AsyncStorage,
-	defaultExpires: 1000 * 3600 * 24,
-	enableCache: true,
-	reconnect: true,
-	sync: {
-	}
-});
+const topic = 'userevent';
 
 export const Read = () => {
 
 	const [text, setText] = useState('');
+	const client = new Mqtt.Client('tcp://172.20.10.2:9000');
 
-	const onConnect = () => {
-		console.warn("connected to mqtt broker"); 
-	}
+	client.on(Mqtt.Event.Message, (topic, message) => {
+		console.log('Mqtt Message:', topic, message.toString());
+	});
 
-	const onFailure = () => {
-		console.warn("can't connect to mqtt broker");
-	}
+	client.on(Mqtt.Event.Connect, () => {
+		console.warn('MQTT Connect');
+		client.subscribe([topic], [0]);
+	});
 
-	const onConnectionLost = (responseObject) => {
-		if (responseObject.errorCode !== 0) {
-			console.log("onConnectionLost:" + responseObject.errorMessage);
-		}
-	}
+	client.on(Mqtt.Event.Error, (error) => {
+		console.warn('MQTT Error:', error);
+	});
 
-	const onMessageArrived = (message) => {
-		console.log("onMessageArrived:" + message.payloadString);
-	}
+	client.on(Mqtt.Event.Disconnect, (cause) => {
+		console.log('MQTT Disconnect:', cause);
+	});
 
-	const client = new Paho.MQTT.Client('broker.mqttdashboard.com', 8000, 'leoGuillaumet');
-
-	client.onConnectionLost = onConnectionLost;
-	client.onMessageArrived = onMessageArrived;
-	client.connect({ onSuccess: onConnect, onFailure: onFailure, useSSL: false });
+	client.connect({
+		clientId: 'user',
+		cleanSession: true,
+	}, err => { if (err) console.warn(err); });
 
 	async function readNdef() {
 		try {
@@ -51,10 +40,16 @@ export const Read = () => {
 			await NfcManager.requestTechnology(NfcTech.Ndef);
 			// the resolved tag object will contain `ndefMessage` property
 			const tag = await NfcManager.getTag();
-			console.warn('tag', tag.ndefMessage[0].payload);
+			console.warn('tag', Ndef.text.decodePayload(tag.ndefMessage[0].payload));
 
 			setText(Ndef.text.decodePayload(tag.ndefMessage[0].payload));
-			client.send('leoGuillaumet', text);
+			const msg = Buffer.from(Ndef.text.decodePayload(tag.ndefMessage[0].payload), "utf-8");
+			// convert buffer to string
+			const resultStr = msg.toString();
+
+			console.warn("BufferString:", resultStr); //Hey. this is a string!
+
+			client.publish(topic, msg, 0);
 		} catch (ex) {
 			console.warn('Oops!', ex);
 		} finally {
