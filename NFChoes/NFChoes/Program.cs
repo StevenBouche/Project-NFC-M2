@@ -16,6 +16,16 @@ builder.Services.AddTransient<NfcStoreProxyHub>();
 builder.Services.AddHostedService<MQTTBroker>();
 builder.Services.AddMemoryCache();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "all", builder => {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowed((host) => true)
+        .AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -25,12 +35,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
-
+app.UseCors("all");
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
     endpoints.MapHub<NfcHub>("/userhub");
     endpoints.MapHub<NfcStoreHub>("/storehub");
 });
-
 app.Run();

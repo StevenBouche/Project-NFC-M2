@@ -77,7 +77,7 @@ namespace NFChoes.HostedServices
                 if(history != null) 
                     await _proxy.OnReceivedMessage(history);
 
-                if (!_memoryCache.TryGetValue(data.StoreId, out List<NFCHistory> storeList))
+                if (_memoryCache.TryGetValue(data.StoreId, out List<NFCHistory> storeList))
                 {
                     List<NFCHistory> insideStoreusers = storeList.Where(user => user.OutTimestamp == null).ToList();
                     await _storeProxy.OnReceivedMessage(insideStoreusers, history.StoreId);
