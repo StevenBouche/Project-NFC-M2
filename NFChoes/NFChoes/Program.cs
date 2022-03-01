@@ -3,35 +3,43 @@ using NFChoes.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+
 builder.Services.AddSignalR();
 builder.Services.AddTransient<NfcProxyHub>();
+builder.Services.AddTransient<NfcStoreProxyHub>();
 builder.Services.AddHostedService<MQTTBroker>();
+builder.Services.AddMemoryCache();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "all", builder => {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowed((host) => true)
+        .AllowCredentials();
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
-
-//app.UseAuthorization();
-
 app.UseRouting();
-
+app.UseCors("all");
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
     endpoints.MapHub<NfcHub>("/userhub");
+    endpoints.MapHub<NfcStoreHub>("/storehub");
 });
-
 app.Run();

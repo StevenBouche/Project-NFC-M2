@@ -13,12 +13,9 @@ namespace NFChoes.Hubs
             _hub = hub;
         }
 
-        public Task OnReceivedMessage(NFCMessage message)
+        public Task OnReceivedMessage(NFCHistory message)
         {
             return _hub.Clients.Group(message.UserId).SendAsync("ReceivedMessage", message);
         }
-
-        
-
     }
 }

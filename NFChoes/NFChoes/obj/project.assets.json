@@ -561,7 +561,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "zOGoD1VMXBTV1Gk6yzcTA4bIl37HG+0VOvFtsW9LnWHmu/tbBDGB5h/5OsOCmE3Sfu6tfmt2pTdr7k0sRkDA8g==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -576,12 +576,11 @@
       ]
     },
     "Microsoft.NETCore.Targets/1.1.0": {
-      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "sha512": "8TgNgb6mqx7EmYUwdsD8LOEW65CnU7G5yay/KGKlMmBNphOsNC4fCkZv0C8kE6y0zVdqggrNT2FY+OquLj6KsA==",
       "type": "package",
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -940,12 +939,11 @@
       ]
     },
     "System.IO/4.3.0": {
-      "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "sha512": "X8RIQixoTO+BAAw/6EtE43+Opmtrq2wPtfME6fGrhymh2pqZb9m5vs6HrtT3vfKFBFITGU6AMGZQF41PzHLKUg==",
       "type": "package",
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1068,12 +1066,11 @@
       ]
     },
     "System.Reflection/4.3.0": {
-      "sha512": "KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
+      "sha512": "IL+UWU7Fo8OP9ZLAdmMU1LUFdOmJsnPbDLbYRZW/kf0Y08PUnygbv/rE1la3mha1Gi9m6W7C1Nw8h01Twc78AA==",
       "type": "package",
       "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1149,12 +1146,11 @@
       ]
     },
     "System.Reflection.Emit/4.3.0": {
-      "sha512": "228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
+      "sha512": "s2FYjraFlCCoR8yzauVfuE3JFOffWfbZheA1Y5g/jK99S63/GVKvGXWwUX6CEcq4Xd+VTpdom3Dzp18PNCxy2g==",
       "type": "package",
       "path": "system.reflection.emit/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1185,12 +1181,11 @@
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
-      "sha512": "59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
+      "sha512": "u91w18SM25i11qdpRRtJHqkyQV8iHSN9i8nlG7GgFI7I2qCZRrNMvUwJ47Jtevz0DJokE3Eygd1FGgQchm7Cdw==",
       "type": "package",
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1230,12 +1225,11 @@
       ]
     },
     "System.Reflection.Primitives/4.3.0": {
-      "sha512": "5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
+      "sha512": "nK2fXqH65436G0ol4c35tCpSuXVPN/Y2yz8CtahFzXhR52VJ1gPUMQ3Z8FpKVY9mPNKoAB6cUmE73vNU8urD9g==",
       "type": "package",
       "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1287,12 +1281,11 @@
       ]
     },
     "System.Runtime/4.3.0": {
-      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "sha512": "/SNQb9EFQ6BEyhNDUS6XiYU0MkdGK1g5PhNp+Op38rvxEAES6BA4Ef37r1icVSMM9OSWFWUQnLzJOhTsp1f76w==",
       "type": "package",
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1404,12 +1397,11 @@
       ]
     },
     "System.Text.Encoding/4.3.0": {
-      "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
+      "sha512": "OjiWwRM5g0MLMj/UAmpqXB/6B15/rIzrWKXi5nFpEPdSbl5WHQ02CQp/u0rH0s3u2s4HN77ZgkxhdMJTLFLiAw==",
       "type": "package",
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1493,12 +1485,11 @@
       ]
     },
     "System.Threading.Tasks/4.3.0": {
-      "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
+      "sha512": "Ad0bvoRDXOBYUvfBxQf0pnWs8tuip7r20hOX8bZhpSgejyxo1k7a5ZyXc9JnGKmNFIrVb0hSqxdXvAS56WM/FA==",
       "type": "package",
       "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1571,19 +1562,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\camza\\.nuget\\packages\\": {}
+    "C:\\Users\\steve\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFChoes\\NFChoes\\NFChoes.csproj",
+      "projectUniqueName": "H:\\Documents\\Scolaire\\Master2\\Project-NFC-M2\\NFChoes\\NFChoes\\NFChoes.csproj",
       "projectName": "NFChoes",
-      "projectPath": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFChoes\\NFChoes\\NFChoes.csproj",
-      "packagesPath": "C:\\Users\\camza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFChoes\\NFChoes\\obj\\",
+      "projectPath": "H:\\Documents\\Scolaire\\Master2\\Project-NFC-M2\\NFChoes\\NFChoes\\NFChoes.csproj",
+      "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
+      "outputPath": "H:\\Documents\\Scolaire\\Master2\\Project-NFC-M2\\NFChoes\\NFChoes\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\camza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
