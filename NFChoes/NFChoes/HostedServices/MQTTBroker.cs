@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Caching.Memory;
 using MQTTnet;
 using MQTTnet.Client.Receiving;
 using MQTTnet.Server;
@@ -13,18 +11,23 @@ namespace NFChoes.HostedServices
     public class MQTTBroker : BackgroundService
     {
         private readonly ILogger _logger;
-        private IMqttServer _mqttServer;
+        private readonly IMqttServer _mqttServer;
         private readonly NfcProxyHub _proxy;
         //Actions
         private readonly Dictionary<string, Action<MqttApplicationMessageReceivedEventArgs>> _topicActions;
 
+        private readonly IMemoryCache _memoryCache;
 
-        public MQTTBroker(ILogger<MQTTBroker> logger, NfcProxyHub proxy)
+        private readonly object _lockObj = new();
+
+
+        public MQTTBroker(IMemoryCache memoryCache, ILogger<MQTTBroker> logger, NfcProxyHub proxy)
         {
             _mqttServer = new MqttFactory().CreateMqttServer();
             _logger = logger;
             _topicActions = new Dictionary<string, Action<MqttApplicationMessageReceivedEventArgs>>();
             _proxy = proxy; 
+            _memoryCache = memoryCache;
         }
 
         private void InitHandler()
@@ -39,9 +42,38 @@ namespace NFChoes.HostedServices
             try
             {
                 var data = JsonConvert.DeserializeObject<NFCMessage>(obj);
-                data.Timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-                await _proxy.OnReceivedMessage(data);
+                data!.Timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+                NFCHistory? history;
 
+
+                lock (_lockObj)
+                {
+                    if (!_memoryCache.TryGetValue(data.StoreId, out List<NFCHistory> lists))
+                    {
+                        lists = new List<NFCHistory>();
+                        _memoryCache.Set(data.StoreId, lists);
+                    }
+
+                   history = lists.SingleOrDefault(user => user.UserId.Equals(data.UserId) && user.OutTimestamp == null);
+
+                    if(history == null)
+                    {
+                        history = new NFCHistory()
+                        {
+                            UserId = data.UserId,
+                            StoreId = data.StoreId,
+                            InTimestamp = data.Timestamp
+                        };
+                        lists.Add(history);
+                    }
+                    else
+                    {
+                        history.OutTimestamp = data.Timestamp;
+                    }
+                }
+
+                if(history != null) 
+                    await _proxy.OnReceivedMessage(history);
             }
             catch (Exception e)
             {

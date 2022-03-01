@@ -27,3 +27,32 @@ C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Projec
 C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.pdb
 C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.genruntimeconfig.cache
 C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\Newtonsoft.Json.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\appsettings.Development.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\appsettings.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\NFChoes.exe
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\NFChoes.deps.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\NFChoes.runtimeconfig.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\NFChoes.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\ref\NFChoes.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\NFChoes.pdb
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\Microsoft.OpenApi.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\MQTTnet.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\Newtonsoft.Json.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.csproj.AssemblyReference.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.GeneratedMSBuildEditorConfig.editorconfig
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.AssemblyInfoInputs.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.AssemblyInfo.cs
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.csproj.CoreCompileInputs.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.MvcApplicationPartsAssemblyInfo.cs
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.MvcApplicationPartsAssemblyInfo.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\staticwebassets.build.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\staticwebassets.development.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\scopedcss\bundle\NFChoes.styles.css
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.csproj.CopyComplete
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\ref\NFChoes.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.pdb
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFChoes\NFChoes\obj\Debug\net6.0\NFChoes.genruntimeconfig.cache

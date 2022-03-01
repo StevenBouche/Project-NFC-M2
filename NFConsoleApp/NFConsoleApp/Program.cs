@@ -16,17 +16,52 @@ connection.Closed += async (error) => {
 };
 
 connection.On<UserDTO>("ReceivedMessage", (user) => {
+    var message = user.OutTimestamp == null ?
+        $"I just walked into the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeSeconds(user.InTimestamp)}" :
+        $"I just left the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeSeconds((long)user.OutTimestamp)}";
     Console.WriteLine(JsonConvert.SerializeObject(user));
+    Console.WriteLine(message);
 });
 
 await connection.StartAsync();
 
-Console.ReadLine();
+Console.WriteLine("Enter help too give all commands.");
+
+while (true)
+{
+    var line = ReadLine();
+   /* Action? action = line switch
+    {
+        "menu" => () => {
+            Console.WriteLine("- history : Write history to get all your movements");
+            Console.WriteLine("- exit : Stop command line");
+        },
+        "exit" => () => { break; },
+        _ => null
+    };
+    action?.Invoke();*/
+}
+
+
+await connection.StopAsync();
+
+Environment.Exit(0);
+
+static string? ReadLine()
+{
+    Console.Write(">");
+    return Console.ReadLine();
+}
 
 class UserDTO
 {
-    public string UserId { get; set; } = "";
-    public string StoreId { get; set; } = "";
-    public long Timestamp { get; set; }
+    [JsonProperty("userId")]
+    public string UserId { get; set; } = string.Empty;
+    [JsonProperty("storeId")]
+    public string StoreId { get; set; } = string.Empty;
+    [JsonProperty("inTimestamp")]
+    public long InTimestamp { get; set; }
+    [JsonProperty("outTimestamp")]
+    public long? OutTimestamp { get; set; } = null;
 }
 

@@ -62,3 +62,35 @@ C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Projec
 C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\ref\NFConsoleApp.dll
 C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.pdb
 C:\Users\camza\Documents\Ancien ordi\Bureau\MIAGE\M2\S2\NFC\Exercices\TP2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.genruntimeconfig.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\NFConsoleApp.exe
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\NFConsoleApp.deps.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\NFConsoleApp.runtimeconfig.json
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\NFConsoleApp.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\ref\NFConsoleApp.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\NFConsoleApp.pdb
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Client.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Common.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\bin\Debug\net6.0\System.IO.Pipelines.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.csproj.AssemblyReference.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.AssemblyInfoInputs.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.AssemblyInfo.cs
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.csproj.CoreCompileInputs.cache
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.csproj.CopyComplete
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\ref\NFConsoleApp.dll
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.pdb
+H:\Documents\Scolaire\Master2\Project-NFC-M2\NFConsoleApp\NFConsoleApp\obj\Debug\net6.0\NFConsoleApp.genruntimeconfig.cache

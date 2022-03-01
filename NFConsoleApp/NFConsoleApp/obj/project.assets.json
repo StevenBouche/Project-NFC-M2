@@ -715,19 +715,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\camza\\.nuget\\packages\\": {}
+    "C:\\Users\\steve\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
+      "projectUniqueName": "H:\\Documents\\Scolaire\\Master2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
       "projectName": "NFConsoleApp",
-      "projectPath": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
-      "packagesPath": "C:\\Users\\camza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\camza\\Documents\\Ancien ordi\\Bureau\\MIAGE\\M2\\S2\\NFC\\Exercices\\TP2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\obj\\",
+      "projectPath": "H:\\Documents\\Scolaire\\Master2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\NFConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
+      "outputPath": "H:\\Documents\\Scolaire\\Master2\\Project-NFC-M2\\NFConsoleApp\\NFConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\camza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
