@@ -54,16 +54,13 @@ export const Read = () => {
 			await NfcManager.requestTechnology(NfcTech.Ndef);
 			// the resolved tag object will contain `ndefMessage` property
 			const tag = await NfcManager.getTag();
-			console.warn('tag', Ndef.text.decodePayload(tag.ndefMessage[0].payload));
+			console.warn(`tag ${Ndef.text.decodePayload(tag.ndefMessage[0].payload)} detected in ${storeId} | send to MQTT`);
 
 			setText(Ndef.text.decodePayload(tag.ndefMessage[0].payload));
 			const msg = Buffer.from(`{"UserId":"${Ndef.text.decodePayload(tag.ndefMessage[0].payload)}",
 			"StoreId":"${storeId}"}`
 				, "utf-8");
-			const resultStr = msg.toString();
-
-			console.warn("BufferString:", resultStr);
-
+			
 			client.publish(topic, msg, 0);
 		} catch (ex) {
 			console.warn('Oops!', ex);
