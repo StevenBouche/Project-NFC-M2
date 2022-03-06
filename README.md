@@ -9,7 +9,7 @@
 ### Start server
 
 - cd ./NFChoes
-- - docker-compose -f docker-compose.yml -f docker-compose.override.yml build
+- docker-compose -f docker-compose.yml -f docker-compose.override.yml build
 - docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 ### Start Console App
