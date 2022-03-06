@@ -22,6 +22,7 @@ builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true
 
 builder.Services.AddSignalR();
 builder.Services.AddTransient<NfcProxyHub>();
+builder.Services.AddTransient<NfcStoreProxyHub>();
 //builder.Services.AddHostedService<MQTTBroker>();
 builder.Services.AddMemoryCache();
 

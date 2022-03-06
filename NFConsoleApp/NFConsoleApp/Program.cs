@@ -2,9 +2,17 @@
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
 
-Console.WriteLine("Hello, World!");
+string? Id = string.Empty;
 
-string Id = "cringe";
+do
+{
+    Console.WriteLine("Enter USERID of NFC card: ");
+    Id = ReadLine();
+}
+while (string.IsNullOrWhiteSpace(Id));
+
+Console.WriteLine("Connect to the server...");
+
 HubConnection connection = new HubConnectionBuilder()
                 .WithUrl($"http://localhost:8080/userhub?idUser={Id}")
                 .Build();
@@ -19,8 +27,10 @@ connection.On<UserDTO>("ReceivedMessage", (user) => {
     var message = user.OutTimestamp == null ?
         $"I just walked into the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeMilliseconds(user.InTimestamp)}" :
         $"I just left the store : {user.StoreId} at {DateTimeOffset.FromUnixTimeMilliseconds((long)user.OutTimestamp)}";
+    Console.WriteLine("");
     Console.WriteLine(JsonConvert.SerializeObject(user));
     Console.WriteLine(message);
+    Console.Write(">");
 });
 
 await connection.StartAsync();
@@ -40,6 +50,7 @@ while (true)
         {
             var list = await connection.InvokeAsync<List<UserDTO>>("MyHistory");
             list.ForEach(x => Console.WriteLine(JsonConvert.SerializeObject(x)));
+            Console.Write(">");
         } ,
         "exit" => null,
         _ => () => { }
