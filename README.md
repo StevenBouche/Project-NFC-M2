@@ -18,3 +18,7 @@
 - ./NFConsoleApp/bin/Release/net6.0/NFConsoleApp.exe
 
 
+### App mobile
+
+
+APK FILE : https://drive.google.com/file/d/1o8DWQweJhGwNsvT3EemXkCi5PC6CvyS0/view?usp=sharing
