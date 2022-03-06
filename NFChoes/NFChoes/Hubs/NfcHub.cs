@@ -49,7 +49,7 @@ namespace NFChoes.Hubs
         {
             var idEquipment = GetIdUserOfContext();
 
-            if(idEquipment == null || !_cache.TryGetValue(idEquipment, out List<NFCHistory> userlists))
+            if(idEquipment == null || !_cache.TryGetValue(idEquipment + "-user", out List<NFCHistory> userlists))
                 return new List<NFCHistory>();
 
             return userlists;

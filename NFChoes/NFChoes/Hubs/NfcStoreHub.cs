@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Caching.Memory;
+using NFChoes.Dto;
 
 namespace NFChoes.Hubs
 {
@@ -6,10 +8,12 @@ namespace NFChoes.Hubs
     {
         private readonly ILogger<NfcHub> Logger;
         private const string storeId = "storeId";
+        private readonly IMemoryCache _memoryCache;
 
-        public NfcStoreHub(ILogger<NfcHub> logger)
+        public NfcStoreHub(ILogger<NfcHub> logger, IMemoryCache memoryCache)
         {
             Logger = logger;
+            _memoryCache = memoryCache;
         }
 
         public override async Task OnConnectedAsync()
@@ -40,6 +44,19 @@ namespace NFChoes.Hubs
 
             Logger.LogInformation($"Store disconnected : {id}.");
         }
+
+        public List<NFCHistory> GetBaseList()
+        {
+            var idEquipment = GetIdUserOfContext();
+
+            if (_memoryCache.TryGetValue(idEquipment + "-store", out List<NFCHistory> storeList))
+            {
+                return storeList.Where(user => user.OutTimestamp == null).ToList();
+            }
+
+            return new List<NFCHistory>();
+        }
+
         private async Task PushClientToGroup(string idClient, string groupname, CancellationToken token)
         {
 

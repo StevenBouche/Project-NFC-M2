@@ -66,16 +66,16 @@ namespace NFChoes.HostedServices
 
                 lock (_lockObj)
                 {
-                    if (!_memoryCache.TryGetValue(data.StoreId, out List<NFCHistory> lists))
+                    if (!_memoryCache.TryGetValue(data.StoreId + "-store", out List<NFCHistory> lists))
                     {
                         lists = new List<NFCHistory>();
-                        _memoryCache.Set(data.StoreId, lists);
+                        _memoryCache.Set(data.StoreId+"-store", lists);
                     }
 
-                    if (!_memoryCache.TryGetValue(data.UserId, out List<NFCHistory> userlists))
+                    if (!_memoryCache.TryGetValue(data.UserId + "-user", out List<NFCHistory> userlists))
                     {
                         userlists = new List<NFCHistory>();
-                        _memoryCache.Set(data.UserId, userlists);
+                        _memoryCache.Set(data.UserId + "-user", userlists);
                     }
 
                     history = lists.SingleOrDefault(user => user.UserId.Equals(data.UserId) && user.OutTimestamp == null);
@@ -100,7 +100,7 @@ namespace NFChoes.HostedServices
                 if(history != null) 
                     await _proxy.OnReceivedMessage(history);
 
-                if (_memoryCache.TryGetValue(data.StoreId, out List<NFCHistory> storeList))
+                if (_memoryCache.TryGetValue(data.StoreId + "-store", out List<NFCHistory> storeList))
                 {
                     List<NFCHistory> insideStoreusers = storeList.Where(user => user.OutTimestamp == null).ToList();
                     await _storeProxy.OnReceivedMessage(insideStoreusers, history.StoreId);

@@ -21,7 +21,7 @@ namespace NFChoes.Controllers
         {
             List<NFCHistory> result = new();
 
-            if(string.IsNullOrWhiteSpace(storeId) || !_memoryCache.TryGetValue(storeId, out result))
+            if(string.IsNullOrWhiteSpace(storeId) || !_memoryCache.TryGetValue(storeId + "-store", out result))
             {
                 return Ok(result);
             }
