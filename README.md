@@ -17,6 +17,13 @@
 - dotnet build --configuration Release
 - ./NFConsoleApp/bin/Release/net6.0/NFConsoleApp.exe
 
+### Start NFCFront
+
+Pour voir en temps réel le nombre de personnes dans chaque magasins
+
+- cd ./NFCFront
+- npm i
+- npm start
 
 ### App mobile
 
